@@ -1,0 +1,20 @@
+# to copy the content of one file to the another file
+file_name=input("Enter the file name to be copied: ")
+with open(file_name,"r") as fp:
+    content=fp.read()
+    new_file_name = input("Enter the new file name: ")
+    print("-" * 100)
+    print("\t\tBefore copying file")
+    print("-"*100)
+    print(content)
+    print("-"*100)
+    with open(new_file_name,"a+") as new_fp:
+        new_fp.write(str(content)+'\n')
+        new_fp.seek(0)
+        dst_file=new_fp.read()
+        print("\t\tAfter copying file")
+        print("-" * 100)
+        print(dst_file)
+        print("-" * 100)
+        print("File copied Successfully")
+        print("-" * 100)
